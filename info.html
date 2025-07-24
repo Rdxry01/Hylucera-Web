@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>info</title>
+  <a href="index.html" class="textah">Balik Ke home</a>
+  <style>
+    body{
+      background-image: url(https://files.catbox.moe/hnt3v8.jpeg);
+      font-size: 25px;
+      text-align: center;
+      font-family: Arial, Sans-Serif;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    h6{
+      color: white;
+      font-style: bold;
+    }
+    p{
+      color: white;
+      font-style: italic;
+    }
+    .cd{
+      color : white;
+    }
+  </style>
+</head>
+<body>
+  <h6>Server Countdown <br /> <div id="countdown">
+  </div></h6>
+  <p>Tema Server: <br />&#x1F3AE;RPG, 🎮🗡️🛡️🐉MAZE, </p
+</body>
+  <div id="countdown" class="cd">Loading...</div>
+
+  <script>
+    // Set tanggal target countdown
+    const targetDate = new Date("July 31, 2025 18:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🎉 Server Telah Dibuka!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
